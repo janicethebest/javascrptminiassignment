@@ -1,0 +1,50 @@
+<html>
+<style>
+.circle{
+  background:red;
+  width:100px;
+  height:100px;
+  border-radius:50px;
+  position:absolute;
+}
+.circle2{
+  background:red;
+  width:100px;
+  height:100px;
+  border-radius:50px;
+  position:absolute;
+}
+</style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+   
+
+<body>
+<div class ="circle"></div>
+<div class ="circle2"></div>
+
+<script>
+   var circle = $(".circle"); 
+console.log(circle[0].offsetheight);
+$(document).on("mousemove", function(event){ 
+  var screenwidth = $ (document).width();
+  var cursorX = event. pageX;
+   var cursorY = event. pageY;
+  var opacity = (screenwidth- cursorX)/screenwidth;
+  $(".circle").css({
+    "opacity":opacity,
+    "left":cursorX,
+    "top":cursorY, 
+    })
+  $(".circle2").css({
+    "opacity":opacity,
+    "top":cursorY,
+    "right":cursorX, 
+    })
+      }); 
+    </script>
+    </body> 
+
+    
+    </html>
